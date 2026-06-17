@@ -1,0 +1,196 @@
+/* Página de Todas las Notificaciones */
+.todas-notificaciones-page {
+  min-height: 100vh;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Botón marcar todas como leídas */
+.mark-all-button {
+  color: #60a5fa !important;
+  border-color: #60a5fa !important;
+  text-transform: none !important;
+  font-size: 0.875rem !important;
+}
+
+.mark-all-button:hover {
+  background-color: rgba(96, 165, 250, 0.1) !important;
+}
+
+/* Contenedor principal */
+.notifications-container {
+  padding: 24px 16px !important;
+  max-width: 800px !important;
+}
+
+/* Paper de notificaciones */
+.notifications-paper {
+  background-color: #252526 !important;
+  border: 1px solid #404040 !important;
+  border-radius: 7.5px !important;
+  overflow: hidden !important;
+}
+
+/* Lista de notificaciones */
+.notifications-list {
+  padding: 0 !important;
+}
+
+/* Items de notificación */
+.notification-item {
+  padding: 16px 20px !important;
+  border-bottom: 1px solid #404040 !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+}
+
+.notification-item:hover {
+  background-color: #2a2a2b !important;
+}
+
+.notification-item.unread {
+  background-color: #1f1f20 !important;
+  border-left: 3px solid #60a5fa !important;
+}
+
+.notification-item.read {
+  background-color: transparent !important;
+}
+
+/* Avatar de notificación */
+.notification-avatar {
+  width: 48px !important;
+  height: 48px !important;
+  margin-right: 16px !important;
+}
+
+.notification-avatar.unread {
+  background-color: #60a5fa !important;
+  color: #ffffff !important;
+}
+
+.notification-avatar.read {
+  background-color: #555555 !important;
+  color: #cccccc !important;
+}
+
+/* Título de notificación */
+.notification-title {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  margin-bottom: 4px !important;
+}
+
+.notification-title.read {
+  color: #cccccc !important;
+  font-weight: 400 !important;
+}
+
+/* Mensaje de notificación */
+.notification-message {
+  color: #cccccc !important;
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 4px !important;
+}
+
+.notification-message.read {
+  color: #888888 !important;
+}
+
+/* Tiempo de notificación */
+.notification-time {
+  color: #888888 !important;
+  font-size: 0.8rem !important;
+}
+
+/* Chip de tipo */
+.notification-chip {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border: 1px solid #555555 !important;
+  font-size: 0.75rem !important;
+}
+
+/* Punto de no leída */
+.unread-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #60a5fa;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+
+/* Divisor */
+.notification-divider {
+  background-color: #404040 !important;
+  margin: 0 !important;
+}
+
+/* Estado vacío */
+.empty-icon {
+  font-size: 4rem !important;
+  color: #666666 !important;
+  margin-bottom: 16px !important;
+}
+
+.empty-title {
+  color: #cccccc !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+}
+
+.empty-subtitle {
+  color: #888888 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .notifications-container {
+    padding: 16px 8px !important;
+  }
+  
+  .notification-item {
+    padding: 12px 16px !important;
+  }
+  
+  .notification-avatar {
+    width: 40px !important;
+    height: 40px !important;
+    margin-right: 12px !important;
+  }
+  
+  .page-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .mark-all-button {
+    font-size: 0.75rem !important;
+    padding: 4px 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .notifications-container {
+    padding: 12px 4px !important;
+  }
+  
+  .notification-item {
+    padding: 10px 12px !important;
+  }
+  
+  .notification-avatar {
+    width: 36px !important;
+    height: 36px !important;
+    margin-right: 10px !important;
+  }
+  
+  .notification-title {
+    font-size: 0.9rem !important;
+  }
+  
+  .notification-message {
+    font-size: 0.85rem !important;
+  }
+}

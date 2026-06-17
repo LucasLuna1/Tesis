@@ -1,0 +1,19 @@
+# 🚀 OPTIMIZACIÓN: Ignorar archivos innecesarios en el build
+node_modules
+npm-debug.log
+.env
+.env.local
+.git
+.gitignore
+README.md
+.vscode
+.idea
+*.log
+coverage
+.nyc_output
+.DS_Store
+*.swp
+*.swo
+*~
+dist
+build

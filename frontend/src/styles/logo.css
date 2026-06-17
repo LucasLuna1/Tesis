@@ -1,0 +1,161 @@
+/* Estilos modernos para logos de equipos/clubes */
+
+/* Contenedor base para logos */
+.logo-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo con tamaño fijo y proporción mantenida */
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background-color: white;
+}
+
+/* Tamaños predefinidos para logos */
+.logo-small {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-medium {
+  width: 60px;
+  height: 60px;
+}
+
+.logo-large {
+  width: 100px;
+  height: 100px;
+}
+
+.logo-extra-large {
+  width: 120px;
+  height: 120px;
+}
+
+/* Variante redonda (para usar con border-radius: 50%) */
+.logo-rounded {
+  border-radius: 50%;
+}
+
+/* Variante cuadrada con bordes redondeados */
+.logo-square {
+  border-radius: 12px;
+}
+
+/* Hover effects */
+.logo-container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Placeholder cuando no hay logo */
+.logo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9e9e9e;
+  font-size: 0.75em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .logo-large {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .logo-extra-large {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Animación de carga para logos */
+.logo-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  animation: logoShimmer 1.5s infinite;
+}
+
+@keyframes logoShimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Clases de utilidad para diferentes contextos */
+.logo-in-card {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.logo-in-form {
+  border: 2px dashed #e0e0e0;
+  background-color: #fafafa;
+}
+
+.logo-in-form:hover {
+  border-color: #1976d2;
+  background-color: #f3f8ff;
+}
+
+/* Override para Material-UI Avatar cuando se usa como logo */
+.MuiAvatar-root.logo-avatar {
+  background-color: white !important;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.MuiAvatar-root.logo-avatar img {
+  object-fit: contain !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.MuiAvatar-root.logo-avatar-rounded {
+  border-radius: 50% !important;
+}
+
+.MuiAvatar-root.logo-avatar-rounded img {
+  object-fit: contain !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}

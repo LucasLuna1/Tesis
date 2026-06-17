@@ -1,0 +1,247 @@
+/* Sidebar de Notificaciones - Estilo Oscuro */
+.notificaciones-sidebar .MuiDrawer-paper {
+  width: 400px !important;
+  max-width: 90vw !important;
+  background-color: #1e1e1e !important; /* Mismo color que sidebar izquierdo */
+  color: #ffffff !important;
+  border-left: 1px solid #333333; /* 10% más oscuro que sidebar izquierdo */
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 1400 !important; /* Por encima del navbar (z-index: 1200) */
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important; /* Fijo a la derecha */
+  height: 100vh !important;
+  transition: transform 200ms ease 0ms !important;
+}
+
+/* Header del Sidebar */
+.sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid #333333; /* 10% más oscuro que sidebar izquierdo */
+  background-color: #1e1e1e; /* Mismo color que sidebar izquierdo */
+  margin: 0;
+  margin-bottom: 0 !important;
+}
+
+.sidebar-title {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 1.2rem !important;
+}
+
+.close-button {
+  color: #ffffff !important;
+}
+
+.close-button:hover {
+  background-color: #333333 !important;
+}
+
+/* Contenido del Sidebar */
+.sidebar-content {
+  flex: 1;
+  overflow: auto;
+  background-color: #1e1e1e; /* Mismo color que sidebar izquierdo */
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0 !important;
+}
+
+/* En móviles, agregar padding inferior para que no se tape con footer fijo */
+@media (max-width: 960px) {
+  .sidebar-content {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* Lista de Notificaciones */
+.notifications-list {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Items de Notificación */
+.notification-item {
+  padding: 16px 20px !important;
+  border-bottom: 1px solid #333333 !important; /* 10% más oscuro que sidebar izquierdo */
+  transition: background-color 0.2s ease !important;
+  margin: 0 !important;
+}
+
+/* Primer item sin margen superior */
+.notification-item:first-child {
+  margin-top: 0 !important;
+  padding-top: 16px !important;
+}
+
+.notification-item:hover {
+  background-color: #2a2a2b !important; /* 10% más oscuro que sidebar izquierdo */
+}
+
+.notification-item.unread {
+  background-color: #252526 !important; /* 10% más oscuro que sidebar izquierdo */
+  border-left: 3px solid #1976d2 !important;
+}
+
+.notification-item.read {
+  background-color: transparent !important;
+}
+
+/* Avatar de Notificación */
+.notification-avatar {
+  width: 48px !important;
+  height: 48px !important;
+  margin-right: 12px !important;
+}
+
+.notification-avatar.unread {
+  background-color: #1976d2 !important;
+  color: #ffffff !important;
+}
+
+.notification-avatar.read {
+  background-color: #555555 !important;
+  color: #cccccc !important;
+}
+
+/* Título de Notificación */
+.notification-title {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 4px !important;
+}
+
+.notification-title.read {
+  color: #cccccc !important;
+  font-weight: 400 !important;
+}
+
+/* Mensaje de Notificación */
+.notification-message {
+  color: #cccccc !important;
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 4px !important;
+}
+
+.notification-message.read {
+  color: #888888 !important;
+}
+
+/* Tiempo de Notificación */
+.notification-time {
+  color: #888888 !important;
+  font-size: 0.8rem !important;
+}
+
+/* Chip de Tipo */
+.notification-chip {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border: 1px solid #555555 !important;
+  font-size: 0.75rem !important;
+}
+
+/* Divisor */
+.notification-divider {
+  background-color: #333333 !important; /* 10% más oscuro que sidebar izquierdo */
+  margin: 0 !important;
+}
+
+/* Mensaje Vacío */
+.empty-message {
+  color: #888888 !important;
+  text-align: center !important;
+  font-style: italic !important;
+}
+
+/* Footer del Sidebar */
+.sidebar-footer {
+  padding: 0px 25px 30px 25px;
+  background-color: #1e1e1e !important; /* Mismo color que sidebar izquierdo */
+  border: none !important;
+  position: relative;
+  border-top: 1px solid #333333 !important;
+}
+
+/* Footer fijo en móviles */
+@media (max-width: 960px) {
+  .sidebar-footer {
+    position: fixed !important; /* Fixed para que sea relativo a la ventana */
+    bottom: 0 !important;
+    right: 0 !important; /* Fijo a la derecha de la ventana */
+    left: auto !important;
+    width: 75vw !important; /* Mismo ancho que el drawer en mobile */
+    max-width: 75vw !important;
+    padding: 15px 20px calc(15px + env(safe-area-inset-bottom, 0px)) 20px !important;
+    background-color: #1e1e1e !important; /* Mismo color que sidebar izquierdo */
+    border-top: 1px solid #333333 !important;
+    box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.5) !important;
+    z-index: 1402 !important; /* Mayor que el drawer (1400) */
+  }
+}
+
+/* Botón Ver Todas - Flotante */
+.view-all-button {
+  background-color: #1976d2 !important;
+  color: #ffffff !important;
+  border: 1px solid #1976d2 !important;
+  padding: 12px 15px !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  border-radius: 25px !important;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3) !important;
+  position: relative !important;
+  z-index: 10 !important;
+  transition: all 0.3s ease !important;
+}
+
+.view-all-button:hover {
+  background-color: #1565c0 !important;
+  border-color: #1565c0 !important;
+  box-shadow: 0 6px 16px rgba(25, 118, 210, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Scrollbar personalizado */
+.sidebar-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+  background: #1e1e1e; /* Mismo color que sidebar izquierdo */
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+  background: #333333; /* 10% más oscuro que sidebar izquierdo */
+  border-radius: 3px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
+
+/* Animación de entrada suave */
+.notificaciones-sidebar .MuiBackdrop-root {
+  transition: opacity 200ms ease 0ms !important;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .notificaciones-sidebar .MuiDrawer-paper {
+    width: 75vw !important;
+    max-width: 75vw !important;
+  }
+  
+  .notification-item {
+    padding: 12px 16px !important;
+  }
+  
+  /* Overlay para cerrar tocando fuera en mobile */
+  .notificaciones-sidebar .MuiBackdrop-root {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    z-index: 1399 !important; /* Por encima del navbar */
+  }
+}

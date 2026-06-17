@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: kani-deportes-backend
+    env: node
+    plan: starter
+    # 🚀 OPTIMIZACIÓN: Build más rápido con cache de npm
+    buildCommand: npm ci --prefer-offline --no-audit
+    startCommand: npm start
+    # 🚀 OPTIMIZACIÓN: Health check más rápido
+    healthCheckPath: /health
+    # 🚀 OPTIMIZACIÓN: Timeout más corto para detectar problemas rápido
+    healthCheckGracePeriod: 30
+    # 🚀 OPTIMIZACIÓN: Auto-deploy solo en main
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # 🚀 OPTIMIZACIÓN: Variables para mejor rendimiento
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=512
+      - key: NPM_CONFIG_PRODUCTION
+        value: "true"
+      # 📧 CONFIGURACIÓN DE EMAIL (Obligatorio para recuperación de contraseña)
+      # Configura estas variables en el dashboard de Render:
+      # - SMTP_HOST (ej: smtp.gmail.com, smtp.sendgrid.net)
+      # - SMTP_PORT (ej: 587 para TLS, 465 para SSL)
+      # - SMTP_SECURE (true o false)
+      # - SMTP_USER (usuario del servicio SMTP)
+      # - SMTP_PASS (contraseña o API key)
+      # - EMAIL_FROM (email de remitente, ej: noreply@kani-deportes.com)
+      # - FRONTEND_URL (URL del frontend para los links de recuperación)
+

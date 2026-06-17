@@ -1,0 +1,78 @@
+{
+  "name": "torneo-frontend",
+  "version": "1.0.0",
+  "description": "Frontend para aplicación de gestión de torneos",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@googlemaps/js-api-loader": "^2.0.1",
+    "@mui/icons-material": "^5.15.0",
+    "@mui/material": "^5.15.0",
+    "@mui/x-date-pickers": "^5.0.20",
+    "@tanstack/react-query": "^5.90.2",
+    "@tanstack/react-query-devtools": "^5.90.2",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.5.2",
+    "axios": "^1.6.2",
+    "date-fns": "^2.30.0",
+    "dayjs": "^1.11.10",
+    "firebase": "^10.7.1",
+    "framer-motion": "^10.16.16",
+    "jspdf": "^3.0.3",
+    "jspdf-autotable": "^5.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.48.2",
+    "react-hot-toast": "^2.4.1",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-intersection-observer": "^9.5.3",
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.20.1",
+    "react-scripts": "5.0.1",
+    "recharts": "^2.8.0",
+    "socket.io-client": "^4.7.4",
+    "swiper": "^11.0.5",
+    "tesseract.js": "^6.0.1",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
+  },
+  "overrides": {
+    "date-fns": "^2.30.0"
+  },
+  "scripts": {
+    "start": "cross-env GENERATE_SOURCEMAP=false craco start",
+    "build": "cross-env GENERATE_SOURCEMAP=false ESLINT_NO_DEV_ERRORS=true CI=false craco build",
+    "build:prod": "cross-env NODE_ENV=production GENERATE_SOURCEMAP=false ESLINT_NO_DEV_ERRORS=true CI=false craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
+    "analyze": "npm run build && npx bundle-analyzer build/static/js/*.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "cross-env": "^10.1.0",
+    "typescript": "^4.9.5"
+  },
+  "proxy": "http://localhost:5000"
+}

@@ -1,0 +1,149 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "torneos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "estado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "torneos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizadorId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "torneos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "categoria",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "partidos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "torneoId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "jornada",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "fecha",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "partidos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "fecha",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "partidos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "estado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "fecha",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "grupos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "torneoId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "nombreGrupo",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "tablaPosicionesGrupos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "torneoId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "grupoId",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "convocados",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "partidoId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "equipoId",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "partidos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "arbitroId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "estado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "fecha",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

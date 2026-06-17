@@ -1,0 +1,346 @@
+.estadisticas-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.estadisticas-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.estadisticas-header h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.estadisticas-header p {
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+/* Jugador Destacado */
+.jugador-destacado {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #ffd700;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.destacado-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.destacado-icon {
+  font-size: 2rem;
+}
+
+.destacado-header h3 {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.destacado-info h4 {
+  color: #2c3e50;
+  margin: 0 0 15px 0;
+  font-size: 1.3rem;
+}
+
+.destacado-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Resumen General */
+.resumen-general {
+  margin-bottom: 30px;
+}
+
+.resumen-general h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.resumen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.resumen-card {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.resumen-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.resumen-icon {
+  font-size: 2rem;
+}
+
+.resumen-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.resumen-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.resumen-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Votos por Categoría */
+.votos-categoria {
+  margin-bottom: 30px;
+}
+
+.votos-categoria h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.categoria-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.categoria-stat {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.categoria-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.categoria-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.categoria-icon {
+  font-size: 1.5rem;
+}
+
+.categoria-label {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.categoria-votos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.votos-count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.votos-label {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  text-transform: uppercase;
+}
+
+/* Ranking de Jugadores */
+.ranking-jugadores h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.jugadores-ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.jugador-ranking {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.jugador-ranking:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ranking-position {
+  min-width: 60px;
+  text-align: center;
+}
+
+.position-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+.jugador-info {
+  flex: 1;
+}
+
+.jugador-info h4 {
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.jugador-stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ranking-badge {
+  min-width: 40px;
+  text-align: center;
+}
+
+.badge {
+  font-size: 1.5rem;
+}
+
+.badge.oro {
+  color: #ffd700;
+}
+
+.badge.plata {
+  color: #c0c0c0;
+}
+
+.badge.bronce {
+  color: #cd7f32;
+}
+
+/* Estados */
+.estadisticas-loading,
+.estadisticas-error,
+.estadisticas-vacio {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.estadisticas-error h3 {
+  color: #e74c3c;
+  margin-bottom: 10px;
+}
+
+.estadisticas-vacio h3 {
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .estadisticas-container {
+    padding: 15px;
+  }
+  
+  .resumen-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .categoria-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .jugador-ranking {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .jugador-stats {
+    justify-content: center;
+  }
+  
+  .destacado-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
