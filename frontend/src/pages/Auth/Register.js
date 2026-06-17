@@ -148,7 +148,7 @@ const Register = () => {
         // También crear en el backend
         try {
           const token = await user.getIdToken();
-          const response = await fetch(`${process.env.REACT_APP_BACKEND_URL || 'https://kani-deportes-production.up.railway.app'}/api/organizadores`, {
+          const response = await fetch(`${process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000'}/api/organizadores`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
