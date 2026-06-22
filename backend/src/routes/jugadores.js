@@ -678,8 +678,8 @@ router.post('/seguir/:jugadorId', verifyFirebaseToken, verifyAllRoles, async (re
             data: {
               seguidorId: seguidorId,
               seguidorNombre: `${seguidorData.nombre} ${seguidorData.apellido}`,
-              seguidorFoto: seguidorData.foto || seguidorData.fotoPerfil,
-              seguidorTipo: tipoSeguidor,
+              seguidorFoto: seguidorData.foto || seguidorData.fotoPerfil || '',
+              seguidorTipo: tipoSeguidor || 'usuario',
               jugadorId: jugadorId,
               jugadorNombre: `${jugadorData.nombre} ${jugadorData.apellido}`,
               seguimientoId: nuevoSeguimientoRef.id
