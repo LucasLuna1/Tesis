@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const path = require('path');
 const compression = require('compression');
+const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
 const app = express();
@@ -23,7 +24,9 @@ const allowedOrigins = process.env.CORS_ORIGIN
 
 const corsOptions = {
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin) || allowedOrigins.includes('*')) {
+    // Permitir orígenes configurados o si está explícitamente en '*' 
+    // NOTA: Se eliminó !origin por motivos de seguridad
+    if (allowedOrigins.includes(origin) || allowedOrigins.includes('*')) {
       return callback(null, true);
     }
     console.log('❌ CORS blocked origin:', origin);
@@ -38,6 +41,26 @@ app.use(cors(corsOptions));
 app.use(morgan('dev'));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
+
+// Rate limiters
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  max: 100, // límite de 100 peticiones por ventana por IP
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+const authLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hora
+  max: 15, // límite de 15 peticiones de autenticación/resets
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+// Aplicar rate limiter general a toda la API
+app.use('/api/', apiLimiter);
+// Aplicar rate limiter estricto a las rutas de auth
+app.use('/api/auth/', authLimiter);
 
 // Servir archivos estáticos (logos de equipos, fotos de jugadores, etc.)
 const staticOptions = {

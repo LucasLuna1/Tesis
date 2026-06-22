@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const TorneoService = require('../services/TorneoService');
-const { verifyToken } = require('../middleware/auth');
 
 /**
  * @route GET /api/grupos/torneo/:torneoId

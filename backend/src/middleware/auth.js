@@ -1,22 +1,5 @@
-const jwt = require('jsonwebtoken');
 const { admin } = require('../config/firebase');
 const { userTypes } = require('../models');
-
-const verifyToken = async (req, res, next) => {
-  try {
-    const token = req.header('Authorization')?.replace('Bearer ', '');
-    
-    if (!token) {
-      return res.status(401).json({ error: 'Token de acceso requerido' });
-    }
-
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    res.status(401).json({ error: 'Token inválido' });
-  }
-};
 
 const verifyFirebaseToken = async (req, res, next) => {
   try {
@@ -170,7 +153,6 @@ const verifyOwnership = (userIdParam = 'id') => {
 };
 
 module.exports = { 
-  verifyToken, 
   verifyFirebaseToken,
   verifyRole,
   verifyJugador,

@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { useRolePermissions } from '../hooks/useRolePermissions';
 import { Alert, Container, Typography, Box, CircularProgress } from '@mui/material';
 import { Lock } from '@mui/icons-material';
 
-const ProtectedRoute = ({ 
+interface ProtectedRouteProps {
+  children: ReactNode;
+  requiredRole?: string | null;
+  requiredPermission?: string | null;
+  fallbackPath?: string;
+  showAccessDenied?: boolean;
+}
+
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ 
   children, 
   requiredRole = null, 
   requiredPermission = null,
@@ -14,7 +22,7 @@ const ProtectedRoute = ({
 }) => {
   const authContext = useAuth();
   const { userProfile, loading } = authContext || { userProfile: null, loading: true };
-  const permissions = useRolePermissions();
+  const permissions = useRolePermissions() as Record<string, any>;
 
   // 🔄 Esperar a que termine de cargar antes de redirigir
   if (loading) {
@@ -71,7 +79,7 @@ const ProtectedRoute = ({
     return <Navigate to={fallbackPath} replace />;
   }
 
-  return children;
+  return <>{children}</>;
 };
 
 export default ProtectedRoute;
