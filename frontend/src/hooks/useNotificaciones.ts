@@ -46,16 +46,15 @@ export const useNotificaciones = (): UseNotificacionesReturn => {
     }
   }, []);
 
-  // Cargar contador de notificaciones no leídas - DESHABILITADO
+  // Cargar contador de notificaciones no leídas
   const cargarContador = useCallback(async () => {
-    // Ruta deshabilitada temporalmente
-    // try {
-    //   const response = await api.get('/notificaciones/no-leidas/contador');
-    //   setContador(response.data.contador || 0);
-    // } catch (err) {
-    //   console.error('Error al cargar contador:', err);
-    // }
-    setContador(0);
+    try {
+      const response = await api.get('/notificaciones/no-leidas/contador');
+      setContador(response.data.contador || 0);
+    } catch (err) {
+      console.error('Error al cargar contador:', err);
+      setContador(0);
+    }
   }, []);
 
   // Marcar notificación como leída

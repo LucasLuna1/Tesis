@@ -49,6 +49,19 @@ router.get('/no-leidas', verifyFirebaseToken, async (req, res) => {
   }
 });
 
+// Obtener CONTADOR de notificaciones no leídas (usado por la campana)
+router.get('/no-leidas/contador', verifyFirebaseToken, async (req, res) => {
+  try {
+    const userId = req.user.uid;
+    const contador = await Notificacion.contarNoLeidas(userId);
+
+    res.json({ contador });
+  } catch (error) {
+    console.error('Error contando notificaciones no leídas:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Obtener notificaciones por tipo
 router.get('/tipo/:tipo', verifyFirebaseToken, async (req, res) => {
   try {

@@ -16,15 +16,13 @@ const NotificacionesBell: React.FC = () => {
   const navigate = useNavigate();
 
   const cargarContador = async () => {
-    // Ruta deshabilitada temporalmente
-    // try {
-    //   const response = await api.get('/notificaciones/no-leidas/contador');
-    //   setContador(response.data.contador || 0);
-    // } catch (err) {
-    //   console.error('Error al cargar contador:', err);
-    //   setContador(0);
-    // }
-    setContador(0);
+    try {
+      const response = await api.get('/notificaciones/no-leidas/contador');
+      setContador(response.data.contador || 0);
+    } catch (err) {
+      console.error('Error al cargar contador:', err);
+      setContador(0);
+    }
   };
 
   // Cargar contador inicial y configurar polling
