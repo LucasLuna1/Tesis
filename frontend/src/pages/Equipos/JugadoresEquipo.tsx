@@ -25,7 +25,7 @@ import {
 } from '@mui/icons-material';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
-import { getImageUrl } from '../../services/api.js';
+import { getImageUrl } from '../../services/api';
 import toast from 'react-hot-toast';
 
 interface Jugador {

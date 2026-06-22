@@ -18,7 +18,6 @@ import RestablecerContrasena from './pages/Auth/RestablecerContrasena';
 
 // Dashboard - cargado inmediatamente (ruta por defecto)
 import Dashboard from './pages/Dashboard';
-// (duplicado eliminado)
 
 // Contexts
 import { AuthProvider } from './contexts/AuthContext';
@@ -82,7 +81,7 @@ const TodasLasNotificaciones = React.lazy(() => import('./pages/Notificaciones/T
 const VotacionPartido = React.lazy(() => import('./pages/Votacion').then(module => ({ default: module.VotacionPartido })));
 const GestionCanchas = React.lazy(() => import('./pages/Canchas/GestionCanchas'));
 const JugadorFecha = React.lazy(() => import('./pages/JugadorFecha'));
-const DetallePartido = React.lazy(() => import('./pages/DetallePartido'));
+
 const FixtureCompleto = React.lazy(() => import('./pages/FixtureCompleto'));
 const Patrocinadores = React.lazy(() => import('./pages/Patrocinadores'));
 
@@ -335,10 +334,7 @@ const AppContent: React.FC = React.memo(() => {
                 path="/torneos/:id/info" 
                 element={<InfoTorneo />} 
               />
-              <Route 
-                path="/partidos/:id" 
-                element={<DetallePartido />} 
-              />
+
               <Route 
                 path="/fixture" 
                 element={<FixtureCompleto />} 

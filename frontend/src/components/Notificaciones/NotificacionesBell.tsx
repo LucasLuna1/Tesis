@@ -29,10 +29,10 @@ const NotificacionesBell: React.FC = () => {
   useEffect(() => {
     cargarContador();
     
-    // Actualizar el contador cada 10 segundos para mayor responsividad
+    // Actualizar el contador cada 30 segundos para reducir carga (ya hay WebSockets/Push)
     const intervalo = setInterval(() => {
       cargarContador();
-    }, 10000); // 10 segundos
+    }, 30000); // 30 segundos
 
     // Limpiar el intervalo al desmontar el componente
     return () => clearInterval(intervalo);

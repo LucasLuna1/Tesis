@@ -44,7 +44,7 @@ import {
 import AgregarJugadorModal from './AgregarJugadorModal';
 import InformacionClubDialog from './InformacionClubDialog';
 import TorneosClubDialog from './TorneosClubDialog';
-import { getImageUrl } from '../../../services/api.js';
+import { getImageUrl } from '../../../services/api';
 import api from '../../../services/api';
 
 interface DashboardClubProps {

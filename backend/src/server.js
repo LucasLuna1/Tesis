@@ -98,6 +98,10 @@ const routes = {
 };
 
 // Configuración de rutas
+// NOTA: Algunas rutas como /api/notificaciones, /api/grupos, y /api/usuarios
+// NO están registradas individualmente aquí porque ya están registradas
+// a través del handler principal routes.index (montado en /api) que
+// las expone y maneja correctamente.
 const routeConfig = [
   { path: '/api', handler: routes.index },
   { path: '/api/auth', handler: routes.auth },

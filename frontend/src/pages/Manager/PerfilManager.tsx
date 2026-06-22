@@ -42,7 +42,7 @@ import {
 } from '@mui/icons-material';
 import toast from 'react-hot-toast';
 import api from '../../services/api';
-import { getImageUrl } from '../../services/api.js';
+import { getImageUrl } from '../../services/api';
 import { useAuth } from '../../hooks/useAuth';
 
 interface ManagerData {

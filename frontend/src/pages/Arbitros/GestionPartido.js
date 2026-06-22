@@ -53,16 +53,16 @@ import {
 import { createWorker } from 'tesseract.js';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
-import { usePermissions } from '../../hooks/usePermissions';
 import { useTheme as useCustomTheme } from '../../contexts/ThemeContext';
+import { useRolePermissions } from '../../hooks/useRolePermissions';
 import { construirUrlImagen } from '../../utils/imageUtils';
 import LogoDisplay from '../../components/common/LogoDisplay';
 
 const GestionPartido = () => {
   const { id: partidoId } = useParams();
   const navigate = useNavigate();
-  const permissions = usePermissions();
   const { darkMode } = useCustomTheme();
+  const permissions = useRolePermissions();
   
   const [partido, setPartido] = useState(null);
   const [loading, setLoading] = useState(true);

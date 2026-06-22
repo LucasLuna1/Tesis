@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useAuth } from '../hooks/useAuth';
-import api from '../services/api';
+import { getAuth, EmailAuthProvider, reauthenticateWithCredential, updatePassword } from 'firebase/auth';
 import toast from 'react-hot-toast';
 
 const CambiarContrasena = ({ open, onClose }) => {
@@ -79,10 +79,19 @@ const CambiarContrasena = ({ open, onClose }) => {
     }
 
     try {
-      const response = await api.post('/auth/change-password', {
-        currentPassword: formData.currentPassword,
-        newPassword: formData.newPassword
-      });
+      const auth = getAuth();
+      const currentUser = auth.currentUser;
+      
+      if (!currentUser || !currentUser.email) {
+        throw new Error('No hay usuario autenticado o falta email');
+      }
+
+      // 1. Reautenticar para verificar contraseña actual
+      const credential = EmailAuthProvider.credential(currentUser.email, formData.currentPassword);
+      await reauthenticateWithCredential(currentUser, credential);
+
+      // 2. Cambiar a la nueva contraseña
+      await updatePassword(currentUser, formData.newPassword);
 
       toast.success('Contraseña actualizada exitosamente');
       
@@ -95,7 +104,15 @@ const CambiarContrasena = ({ open, onClose }) => {
       onClose();
       
     } catch (error) {
-      const errorMessage = error.response?.data?.error || 'Error al cambiar la contraseña';
+      console.error('Error al cambiar contraseña:', error);
+      let errorMessage = 'Error al cambiar la contraseña';
+      
+      if (error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+        errorMessage = 'La contraseña actual es incorrecta';
+      } else if (error.code === 'auth/weak-password') {
+        errorMessage = 'La nueva contraseña es demasiado débil';
+      }
+      
       setError(errorMessage);
       toast.error(errorMessage);
     } finally {

@@ -35,7 +35,7 @@ import {
   CheckCircle as CheckCircleIcon,
   Info as InfoIcon
 } from '@mui/icons-material';
-import { equiposService } from '../../services/equiposService';
+import { equiposService } from '../../services/api';
 import { torneosEquiposService } from '../../services/api';
 import toast from 'react-hot-toast';
 import { getImageUrl } from '../../services/api';

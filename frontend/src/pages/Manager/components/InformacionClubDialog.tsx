@@ -36,7 +36,7 @@ import {
   Category
 } from '@mui/icons-material';
 import api from '../../../services/api';
-import { getImageUrl } from '../../../services/api.js';
+import { getImageUrl } from '../../../services/api';
 import toast from 'react-hot-toast';
 
 interface InformacionClubDialogProps {

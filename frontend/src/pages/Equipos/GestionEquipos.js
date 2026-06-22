@@ -57,7 +57,7 @@ import {
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-import { equiposService } from '../../services/equiposService';
+import { equiposService } from '../../services/api';
 import api from '../../services/api';
 import toast from 'react-hot-toast';
 import LogoDisplay from '../../components/common/LogoDisplay';

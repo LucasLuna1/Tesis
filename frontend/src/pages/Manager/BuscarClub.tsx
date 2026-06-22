@@ -28,7 +28,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../config/firebase';
-import { getImageUrl } from '../../services/api.js';
+import { getImageUrl } from '../../services/api';
 import api from '../../services/api';
 import toast from 'react-hot-toast';
 

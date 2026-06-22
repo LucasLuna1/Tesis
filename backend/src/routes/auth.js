@@ -100,36 +100,8 @@ router.post('/confirm-password-reset', async (req, res) => {
   }
 });
 
-// Cambiar contraseña (para usuarios autenticados)
-router.post('/change-password', verifyFirebaseToken, async (req, res) => {
-  try {
-    const { currentPassword, newPassword } = req.body;
-    const uid = req.user?.uid; // Asumiendo que viene del middleware de autenticación
-    
-    if (!uid) {
-      return res.status(401).json({ error: 'Usuario no autenticado' });
-    }
-    
-    if (!currentPassword || !newPassword) {
-      return res.status(400).json({ error: 'Contraseña actual y nueva contraseña son requeridas' });
-    }
-    
-    if (newPassword.length < 6) {
-      return res.status(400).json({ error: 'La nueva contraseña debe tener al menos 6 caracteres' });
-    }
-    
-    // Obtener el usuario
-    const userRecord = await admin.auth().getUser(uid);
-    
-    // Actualizar la contraseña
-    await admin.auth().updateUser(uid, { password: newPassword });
-    
-    res.json({
-      message: 'Contraseña actualizada exitosamente'
-    });
-  } catch (error) {
-    res.status(500).json({ error: 'Error al cambiar la contraseña' });
-  }
-});
+// Cambiar contraseña ha sido migrado al frontend usando Firebase Client SDK para mayor seguridad
+// (reauthenticateWithCredential + updatePassword)
+
 
 module.exports = router;
