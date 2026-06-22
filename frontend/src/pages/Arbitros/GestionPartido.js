@@ -50,7 +50,6 @@ import {
   Upload,
   Close
 } from '@mui/icons-material';
-import { createWorker } from 'tesseract.js';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 import { useTheme as useCustomTheme } from '../../contexts/ThemeContext';
@@ -1053,7 +1052,8 @@ const GestionPartido = () => {
       // Preprocesar imagen para mejor precisión
       const imagenProcesada = await preprocesarImagen(imagen);
 
-      const worker = await createWorker('spa', 1, {
+      const tesseract = await import('tesseract.js');
+      const worker = await tesseract.createWorker('spa', 1, {
         logger: (m) => {
           if (m.status === 'recognizing text') {
             setProgresoOCR(Math.round(m.progress * 100));

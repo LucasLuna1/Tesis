@@ -1,12 +1,16 @@
-const moment = require('moment');
-
 // Formatear fechas
 const formatDate = (date) => {
-  return moment(date).format('YYYY-MM-DD HH:mm:ss');
+  if (!date) return null;
+  const d = new Date(date);
+  const pad = (n) => n.toString().padStart(2, '0');
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
 };
 
 const formatDateForDisplay = (date) => {
-  return moment(date).format('DD/MM/YYYY HH:mm');
+  if (!date) return null;
+  const d = new Date(date);
+  const pad = (n) => n.toString().padStart(2, '0');
+  return `${pad(d.getDate())}/${pad(d.getMonth() + 1)}/${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
 };
 
 // Generar fixture automático

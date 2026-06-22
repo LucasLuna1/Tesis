@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Box } from '@mui/material';
+import { Box, CircularProgress, Typography } from '@mui/material';
 
 // Componentes de Layout
 import Navbar from './components/Layout/Navbar';
@@ -144,12 +144,14 @@ const AppContent: React.FC = React.memo(() => {
             <React.Suspense fallback={
               <Box sx={{ 
                 display: 'flex', 
+                flexDirection: 'column',
                 justifyContent: 'center', 
                 alignItems: 'center', 
                 minHeight: '200px',
                 p: 3
               }}>
-                <div>Cargando...</div>
+                <CircularProgress size={40} color="primary" sx={{ mb: 2 }} />
+                <Typography variant="body1" color="text.secondary">Cargando...</Typography>
               </Box>
             }>
             <Routes>
